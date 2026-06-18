@@ -60,3 +60,9 @@ function buildStory() {
     }
     return sentence;
 }
+
+//print the story to the output panel
+const storyPanel = document.querySelector("#story");
+function showStory() {
+    storyPanel.innerHTML = `<p class="finished">${buildStory()}</p>`;
+}
