@@ -16,3 +16,13 @@ function updateButton(part) {
     const word = activeSet[part];
     document.querySelector(`#word${part}`).textContent = word[choices[part]];
 }
+
+// refresh all 5 labels with FOR loop
+function updateAllLabels() {
+    for (let part = 0; part < 5; part ++) {
+        updateLabel(part);
+    }
+}
+
+// show the starting words when the page loads
+updateAllLabels();
