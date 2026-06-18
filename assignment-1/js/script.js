@@ -36,3 +36,13 @@ function cycleWord(part) {
     }
     updateLabel(part);
 }
+
+// one click listener on the container to catch all 5 buttons
+const machine = document.querySelector("#machine");
+machine.addEventListener("click", function (event) {
+    const button = event.target.closest(".word-btn");
+    if (button) {
+        const part = Number(button.getAttribute("data-part"));
+        cycleWord(part);
+    }
+});
