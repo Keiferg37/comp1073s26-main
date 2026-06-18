@@ -6,11 +6,11 @@
 
 // original words from the toy, one array per sentence part
 const classicSet = [
-    ["The turkey", "Mom", "The dog", "My teacher", "The elephant", "The cat"],
+    ["The turkey", "Mom", "Dad", "The dog", "My teacher", "The elephant", "The cat"],
     ["sat on", "ate", "danced with", "saw", "doesn't like", "kissed"],
     ["a funny", "a scary", "a goofy", "a slimy", "a barking", "a fat"],
     ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"],
-    ["on the moon", "on the chair", "in my spagetti", "in my soup", "on the grass", "in my shoes"]
+    ["on the moon", "on the chair", "in my spaghetti", "in my soup", "on the grass", "in my shoes"]
 ];
 
 // track which word index is chosen for each of the 5 parts
@@ -18,7 +18,7 @@ let activeSet = classicSet;
 let choices = [0, 0, 0, 0, 0];
 
 // show the chosen word on one button label
-function updateButton(part) {
+function updateLabel(part) {
     const word = activeSet[part];
     document.querySelector(`#word${part}`).textContent = word[choices[part]];
 }
@@ -44,7 +44,7 @@ function cycleWord(part) {
 }
 
 // one click listener on the container to catch all 5 buttons
-const machine = document.querySelector("#machine");
+const machine = document.querySelector(".machine");
 machine.addEventListener("click", function (event) {
     const button = event.target.closest(".word-btn");
     if (button) {
@@ -59,9 +59,9 @@ function buildStory() {
     for (let part = 0; part < 5; part ++) {
         const words =  activeSet[part];
         if (part < 4) {
-            sentence += '${words[choices[part]]} ';
+            sentence += `${words[choices[part]]} `;
         } else {
-            sentence += `${words[choices[part]]}`;
+            sentence += `${words[choices[part]]}.`;
         }
     }
     return sentence;
@@ -74,18 +74,18 @@ function showStory() {
 }
 
 // run showStory() when the "Tell Story" button is clicked
-const tellBtn = document.querySelector("#tell-btn");
+const tellBtn = document.querySelector("#tellBtn");
 tellBtn.addEventListener("click", showStory);
 
 // bonus add a play aloud audio output using browser speech api
 function speakStory() {
-	if ("speechSynthesis" in window) {
-		window.speechSynthesis.cancel();
-		const utterance = new SpeechSynthesisUtterance(buildStory());
-		window.speechSynthesis.speak(utterance);
-	} else {
-		alert("Sorry, your browser can't read the story aloud.");
-	}
+    if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(buildStory());
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert("Sorry, your browser can't read the story aloud.");
+    }
 }
 
 const speakBtn = document.querySelector("#speakBtn");
