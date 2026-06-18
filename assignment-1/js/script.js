@@ -26,3 +26,13 @@ function updateAllLabels() {
 
 // show the starting words when the page loads
 updateAllLabels();
+
+// cycle a part to its NEXT word wrapping around to the start
+function cycleWord(part) {
+    const words = activeSet[part];
+    choices[part] = choices[part] + 1;
+    if (choices[part] >= words.length) {
+        choices[part] = 0;
+    }
+    updateLabel(part);
+}
