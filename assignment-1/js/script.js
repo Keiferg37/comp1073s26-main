@@ -46,3 +46,17 @@ machine.addEventListener("click", function (event) {
         cycleWord(part);
     }
 });
+
+// join the 5 chosen words into one sentence
+function buildStory() {
+    let sentence = "";
+    for (let part = 0; part < 5; part ++) {
+        const words =  activeSet[part];
+        if (part < 4) {
+            sentence += '${words[choices[part]]} ';
+        } else {
+            sentence += `${words[choices[part]]}`;
+        }
+    }
+    return sentence;
+}
