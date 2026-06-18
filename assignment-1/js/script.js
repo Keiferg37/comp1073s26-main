@@ -1,3 +1,9 @@
+/* jshint esversion: 6 */
+/*
+	Story Maker | COMP1073 Client-Side JavaScript
+	...
+*/
+
 // original words from the toy, one array per sentence part
 const classicSet = [
     ["The turkey", "Mom", "The dog", "My teacher", "The elephant", "The cat"],
