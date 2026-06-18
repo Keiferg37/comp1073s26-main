@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+/* 
+    Story Maker Comp1073 Client-Side Scripting Assignment
+    bright, toy style layout. loaded after normalize.css
+*/
+
+/* base page */
+body {
+    font-family: "Comic Sans MS", "Chalkboard SE", "Comic Relief", sans-serif;
+    background-color: #fff5cc;
+    color: #333;
+    text-align: center;
+    padding: 24px 16px 48px;
+}
+
