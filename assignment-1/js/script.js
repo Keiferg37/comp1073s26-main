@@ -10,3 +10,9 @@ const classicSet = [
 // track which word index is chosen for each of the 5 parts
 let activeSet = classicSet;
 let choices = [0, 0, 0, 0, 0];
+
+// show the chosen word on one button label
+function updateButton(part) {
+    const word = activeSet[part];
+    document.querySelector(`#word${part}`).textContent = word[choices[part]];
+}
