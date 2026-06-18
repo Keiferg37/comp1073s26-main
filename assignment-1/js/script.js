@@ -66,3 +66,7 @@ const storyPanel = document.querySelector("#story");
 function showStory() {
     storyPanel.innerHTML = `<p class="finished">${buildStory()}</p>`;
 }
+
+// run showStory() when the "Tell Story" button is clicked
+const tellBtn = document.querySelector("#tell-btn");
+tellBtn.addEventListener("click", showStory);
