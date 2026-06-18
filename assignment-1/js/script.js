@@ -6,3 +6,7 @@ const classicSet = [
     ["goat", "monkey", "fish", "cow", "frog", "bug", "worm"],
     ["on the moon", "on the chair", "in my spagetti", "in my soup", "on the grass", "in my shoes"]
 ];
+
+// track which word index is chosen for each of the 5 parts
+let activeSet = classicSet;
+let choices = [0, 0, 0, 0, 0];
