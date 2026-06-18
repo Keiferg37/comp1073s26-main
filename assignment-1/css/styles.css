@@ -43,5 +43,22 @@ h1 {
 .word-btn:active {
     transform: translateY(4px);
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
-    
+
 }
+
+/* different colors for each of the 5 parts */
+.word-btn[data-part="0"] { background-color: #9e21c4; }
+.word-btn[data-part="1"] { background-color: #199bd8; }
+.word-btn[data-part="2"] { background-color: #3fd844; }
+.word-btn[data-part="3"] { background-color: #f5a731; }
+.word-btn[data-part="4"] { background-color: #f34596; }
+
+.label {
+    font-size: 1.1rem;
+}
+
+/* action buttons */
+.controls {
+    margin-bottom: 24px;
+}
+
