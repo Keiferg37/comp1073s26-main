@@ -57,7 +57,7 @@ machine.addEventListener("click", function (event) {
 function buildStory() {
     let sentence = "";
     for (let part = 0; part < 5; part ++) {
-        const words =  activeSet[part];
+        const words = activeSet[part];
         if (part < 4) {
             sentence += `${words[choices[part]]} `;
         } else {
