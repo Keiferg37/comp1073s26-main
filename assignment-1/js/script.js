@@ -76,3 +76,17 @@ function showStory() {
 // run showStory() when the "Tell Story" button is clicked
 const tellBtn = document.querySelector("#tell-btn");
 tellBtn.addEventListener("click", showStory);
+
+// bonus add a play aloud audio output using browser speech api
+function speakStory() {
+	if ("speechSynthesis" in window) {
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(buildStory());
+		window.speechSynthesis.speak(utterance);
+	} else {
+		alert("Sorry, your browser can't read the story aloud.");
+	}
+}
+
+const speakBtn = document.querySelector("#speakBtn");
+speakBtn.addEventListener("click", speakStory);
